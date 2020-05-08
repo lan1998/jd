@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_news_item"
+        android:layout_width="377dp"
+        android:layout_height="238dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+
+        android:id="@+id/tv1_news_item"
+        android:layout_width="379dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="245dp"
+        app:layout_constraintEnd_toEndOf="@+id/img_news_item"
+        app:layout_constraintStart_toStartOf="@+id/img_news_item"
+        app:layout_constraintTop_toTopOf="@+id/img_news_item"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv2_news_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/tv1_news_item"
+        app:layout_constraintTop_toBottomOf="@+id/tv1_news_item"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
