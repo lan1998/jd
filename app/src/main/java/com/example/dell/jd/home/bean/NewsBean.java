@@ -17,6 +17,8 @@ public class NewsBean {
     public static class  ResultData implements MultiItemEntity {
         public final static int TYPE_LIST=1;
         public final static int TYPE_TE_XIE=2;
+        public final static int TYPE_VIDEO=4;
+        public final static int TYPE_FLASH=5;
         public   int type;
         public Object data;
         @Override

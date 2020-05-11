@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/img_news_item"
+    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+        android:id="@+id/video_news_item"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:layout_marginStart="8dp"
@@ -17,17 +17,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-<!--  TextView自动换行  app:layout_constrainedWidth="true"     -->
     <TextView
-        app:layout_constrainedWidth="true"
         android:id="@+id/tv1_news_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaa"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/img_news_item"
-        app:layout_constraintTop_toBottomOf="@+id/img_news_item"
+        app:layout_constraintStart_toStartOf="@+id/video_news_item"
+        app:layout_constraintTop_toBottomOf="@+id/video_news_item"
         tools:ignore="MissingConstraints" />
 
     <TextView

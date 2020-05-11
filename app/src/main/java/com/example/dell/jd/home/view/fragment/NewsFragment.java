@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -77,6 +78,8 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements NewsFra
          ArrayList<NewsBean.ResultData> resultData = new ArrayList<>();
         adapter = new NewsRecAdapter(resultData);
         rec.setAdapter(adapter);
+        //添加分割线
+        rec.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
     }
 
     @Override
@@ -89,16 +92,20 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements NewsFra
 
         ArrayList<NewsBean.ResultData> resultData = new ArrayList<>();
 
+        //跑马灯数据
         StringBuffer taxts=new StringBuffer();
         List<NewsBean.DataBean.FlashListBean> flash_list = newsBean.getData().getFlash_list();
         for (int i = 0; i < flash_list.size(); i++) {
             taxts.append(flash_list.get(i).getTheme()+"");
         }
+
         for (int i = 0; i < newsBean.getData().getArticle_list().size(); i++) {
             NewsBean.DataBean.ArticleListBean articleListBean = newsBean.getData().getArticle_list().get(i);
             NewsBean.ResultData artical = new NewsBean.ResultData();
-            if(articleListBean.getColumn_name().equals("特写")){
+            if(articleListBean.getView_type() == 2){
                 artical.type= NewsBean.ResultData.TYPE_TE_XIE;
+            }else if (articleListBean.getView_type() == 4){
+                artical.type= NewsBean.ResultData.TYPE_VIDEO;
             }else {
                 artical.type= NewsBean.ResultData.TYPE_LIST;
             }
@@ -159,7 +166,7 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements NewsFra
             @Override
             public void run() {
                 viewpage_Current_Pos+=1;
-                Log.e("TAG","当前位置"+viewpage_Current_Pos%(newsBean.getData().getBanner_list().size()));
+//                Log.e("TAG","当前位置"+viewpage_Current_Pos%(newsBean.getData().getBanner_list().size()));
 
                 getActivity().runOnUiThread(new Runnable() {
                     @Override

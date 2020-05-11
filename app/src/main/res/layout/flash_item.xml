@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,27 +10,39 @@
         android:id="@+id/img_news_item"
         android:layout_width="150dp"
         android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="20dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv1_news_item"
-        android:layout_width="170dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@+id/img_news_item"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toEndOf="@+id/img_news_item"
+        app:layout_constraintTop_toTopOf="@+id/img_news_item"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv2_news_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@+id/img_news_item"
-        app:layout_constraintTop_toBottomOf="@+id/tv1_news_item"
+        android:layout_marginBottom="8dp"
+        android:text="@string/app_name"
+        android:textSize="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/img_news_item"
+        app:layout_constraintStart_toStartOf="@+id/tv1_news_item"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

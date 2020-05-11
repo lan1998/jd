@@ -25,7 +25,6 @@ import java.util.List;
 
 /**
  * 推荐Fragment
- *
  */
 public class RecommendFragment extends BaseFragment<RecommendPresenter> implements RecommendContract.IRecommendView {
 
