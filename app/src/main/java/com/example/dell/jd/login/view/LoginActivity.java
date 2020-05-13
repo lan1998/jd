@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dell.jd.R;
@@ -34,7 +35,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     /**
      * 获取验证码
      */
-    private Button send_verified_bug;
+    private TextView send_verified_bug;
     /**
      * 登录
      */
@@ -42,11 +43,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     /**
      * 立即注册
      */
-    private Button register_but;
+    private TextView register_but;
     /**
      * 密码登录
      */
-    private Button password_login;
+    private TextView password_login;
 
     private   String edit_phone_num;
     private String edit_sms_code;
@@ -59,12 +60,12 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public void initView() {
 
-        phone_num = (EditText) findViewById(R.id.phone_num);
-        verified = (EditText) findViewById(R.id.verified);
-        send_verified_bug = (Button) findViewById(R.id.send_verified_bug);
-        login = (Button) findViewById(R.id.login_but);
-        register_but = (Button) findViewById(R.id.register_but);
-        password_login = (Button) findViewById(R.id.password_login);
+        phone_num =  findViewById(R.id.phone_num);
+        verified =  findViewById(R.id.verified);
+        send_verified_bug =  findViewById(R.id.send_verified_bug);
+        login =  findViewById(R.id.login_but);
+        register_but =  findViewById(R.id.register_but);
+        password_login =  findViewById(R.id.password_login);
 
     }
 

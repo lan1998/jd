@@ -2,21 +2,30 @@ package com.example.dell.jd.login.bean;
 
 public class AffirmRegisterBean {
 
+    @Override
+    public String toString() {
+        return "AffirmRegisterBean{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                '}';
+    }
+
     /**
      * code : 1
-     * message : 成功提示
-     * data : {"token":{"value":"⽤户登录成功之后的身份标识","expire_time":"token过期时间"},"user_info":{"head_url":"头像","nickname":"昵称","mobile":"⼿机号","qq_bind":"qq是否绑定，1绑定，0未绑定","qq_openid":"扣扣的openid","qq_unionid":"值为空，可以忽略","sina_bind":"新浪是否绑定，1绑定，0未绑定","sina_openid":"新浪的uid","sina_unionid":"值为空，可以忽略","wechat_bind":"微信是否绑定，1绑定，0未绑定","wechat_openid":"微信的openid","wechat_unionid":"微信的unionid","notice_count":"未读消息数量","my_integral":"我的积分","check_in_status":"状态：0未签到，1已签到"}}
+     * message : 登录成功
+     * data : {"token":{"value":"b1ac55a0ef4ef27fb5056934548899ea","expire_time":1590369199},"user_info":{"head_url":"https://www.seetao.com/Public/static/default_head.jpeg","nickname":"大胆的手机","mobile":"17611739206","email":"","qq_bind":0,"qq_openid":"","qq_unionid":"","sina_bind":0,"sina_openid":"","sina_unionid":"","wechat_bind":0,"wechat_openid":"","wechat_unionid":"","notice_count":"1","my_integral":"100","check_in_status":0}}
      */
 
-    private String code;
+    private int code;
     private String message;
     private DataBean data;
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
@@ -37,9 +46,17 @@ public class AffirmRegisterBean {
     }
 
     public static class DataBean {
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "token=" + token +
+                    ", user_info=" + user_info +
+                    '}';
+        }
+
         /**
-         * token : {"value":"⽤户登录成功之后的身份标识","expire_time":"token过期时间"}
-         * user_info : {"head_url":"头像","nickname":"昵称","mobile":"⼿机号","qq_bind":"qq是否绑定，1绑定，0未绑定","qq_openid":"扣扣的openid","qq_unionid":"值为空，可以忽略","sina_bind":"新浪是否绑定，1绑定，0未绑定","sina_openid":"新浪的uid","sina_unionid":"值为空，可以忽略","wechat_bind":"微信是否绑定，1绑定，0未绑定","wechat_openid":"微信的openid","wechat_unionid":"微信的unionid","notice_count":"未读消息数量","my_integral":"我的积分","check_in_status":"状态：0未签到，1已签到"}
+         * token : {"value":"b1ac55a0ef4ef27fb5056934548899ea","expire_time":1590369199}
+         * user_info : {"head_url":"https://www.seetao.com/Public/static/default_head.jpeg","nickname":"大胆的手机","mobile":"17611739206","email":"","qq_bind":0,"qq_openid":"","qq_unionid":"","sina_bind":0,"sina_openid":"","sina_unionid":"","wechat_bind":0,"wechat_openid":"","wechat_unionid":"","notice_count":"1","my_integral":"100","check_in_status":0}
          */
 
         private TokenBean token;
@@ -62,10 +79,19 @@ public class AffirmRegisterBean {
         }
 
         public static class TokenBean {
+            @Override
+            public String toString() {
+                return "TokenBean{" +
+                        "value='" + value + '\'' +
+                        ", expire_time=" + expire_time +
+                        '}';
+            }
+
             /**
-             * value : ⽤户登录成功之后的身份标识
-             * expire_time : token过期时间
+             * value : b1ac55a0ef4ef27fb5056934548899ea
+             * expire_time : 1590369199
              */
+
 
             private String value;
             private String expire_time;
@@ -88,39 +114,63 @@ public class AffirmRegisterBean {
         }
 
         public static class UserInfoBean {
+            @Override
+            public String toString() {
+                return "UserInfoBean{" +
+                        "head_url='" + head_url + '\'' +
+                        ", nickname='" + nickname + '\'' +
+                        ", mobile='" + mobile + '\'' +
+                        ", email='" + email + '\'' +
+                        ", qq_bind=" + qq_bind +
+                        ", qq_openid='" + qq_openid + '\'' +
+                        ", qq_unionid='" + qq_unionid + '\'' +
+                        ", sina_bind=" + sina_bind +
+                        ", sina_openid='" + sina_openid + '\'' +
+                        ", sina_unionid='" + sina_unionid + '\'' +
+                        ", wechat_bind=" + wechat_bind +
+                        ", wechat_openid='" + wechat_openid + '\'' +
+                        ", wechat_unionid='" + wechat_unionid + '\'' +
+                        ", notice_count='" + notice_count + '\'' +
+                        ", my_integral='" + my_integral + '\'' +
+                        ", check_in_status=" + check_in_status +
+                        '}';
+            }
+
             /**
-             * head_url : 头像
-             * nickname : 昵称
-             * mobile : ⼿机号
-             * qq_bind : qq是否绑定，1绑定，0未绑定
-             * qq_openid : 扣扣的openid
-             * qq_unionid : 值为空，可以忽略
-             * sina_bind : 新浪是否绑定，1绑定，0未绑定
-             * sina_openid : 新浪的uid
-             * sina_unionid : 值为空，可以忽略
-             * wechat_bind : 微信是否绑定，1绑定，0未绑定
-             * wechat_openid : 微信的openid
-             * wechat_unionid : 微信的unionid
-             * notice_count : 未读消息数量
-             * my_integral : 我的积分
-             * check_in_status : 状态：0未签到，1已签到
+             * head_url : https://www.seetao.com/Public/static/default_head.jpeg
+             * nickname : 大胆的手机
+             * mobile : 17611739206
+             * email :
+             * qq_bind : 0
+             * qq_openid :
+             * qq_unionid :
+             * sina_bind : 0
+             * sina_openid :
+             * sina_unionid :
+             * wechat_bind : 0
+             * wechat_openid :
+             * wechat_unionid :
+             * notice_count : 1
+             * my_integral : 100
+             * check_in_status : 0
              */
 
             private String head_url;
             private String nickname;
             private String mobile;
-            private String qq_bind;
+            private String email;
+            private int qq_bind;
             private String qq_openid;
             private String qq_unionid;
-            private String sina_bind;
+            private int sina_bind;
             private String sina_openid;
             private String sina_unionid;
-            private String wechat_bind;
+            private int wechat_bind;
             private String wechat_openid;
             private String wechat_unionid;
             private String notice_count;
             private String my_integral;
-            private String check_in_status;
+            private int check_in_status;
 
             public String getHead_url() {
                 return head_url;
@@ -146,11 +196,19 @@ public class AffirmRegisterBean {
                 this.mobile = mobile;
             }
 
-            public String getQq_bind() {
+            public String getEmail() {
+                return email;
+            }
+
+            public void setEmail(String email) {
+                this.email = email;
+            }
+
+            public int getQq_bind() {
                 return qq_bind;
             }
 
-            public void setQq_bind(String qq_bind) {
+            public void setQq_bind(int qq_bind) {
                 this.qq_bind = qq_bind;
             }
 
@@ -170,11 +228,11 @@ public class AffirmRegisterBean {
                 this.qq_unionid = qq_unionid;
             }
 
-            public String getSina_bind() {
+            public int getSina_bind() {
                 return sina_bind;
             }
 
-            public void setSina_bind(String sina_bind) {
+            public void setSina_bind(int sina_bind) {
                 this.sina_bind = sina_bind;
             }
 
@@ -194,11 +252,11 @@ public class AffirmRegisterBean {
                 this.sina_unionid = sina_unionid;
             }
 
-            public String getWechat_bind() {
+            public int getWechat_bind() {
                 return wechat_bind;
             }
 
-            public void setWechat_bind(String wechat_bind) {
+            public void setWechat_bind(int wechat_bind) {
                 this.wechat_bind = wechat_bind;
             }
 
@@ -234,11 +292,11 @@ public class AffirmRegisterBean {
                 this.my_integral = my_integral;
             }
 
-            public String getCheck_in_status() {
+            public int getCheck_in_status() {
                 return check_in_status;
             }
 
-            public void setCheck_in_status(String check_in_status) {
+            public void setCheck_in_status(int check_in_status) {
                 this.check_in_status = check_in_status;
             }
         }
