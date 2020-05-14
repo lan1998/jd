@@ -81,8 +81,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         send_verified_bug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //判断手机号是否为空，判断手机号是否正确
                 String phonenum = phone_num.getText().toString();
+                //判断手机号是否为空，判断手机号是否正确
                 if (!TextUtils.isEmpty(phonenum) && isMobileNO(phonenum)) {
                   //发送验证码
                     mPresenter.getVerified(phonenum, "4");
@@ -107,9 +107,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                             Log.e("TAG", edit_phone_num + "验证码值：" + edit_sms_code);
 
                             mPresenter.checkSmsCode(edit_phone_num, edit_sms_code, "4");
-                            //服务器给我们下发得验证码短信，接收     手机号给他，验证码也给他，
-                            //                    ture
-                            //如果不正确，提示用户
                         } else
                             Toast.makeText(LoginActivity.this, "验证码输入错误", Toast.LENGTH_SHORT).show();
                     } else Toast.makeText(LoginActivity.this, "请输入验证码", Toast.LENGTH_SHORT).show();
@@ -141,8 +138,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     public void startRegister(View view) {
-//        Intent intent = new Intent(this,RegisterMSMCodeActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this,RegisterActivity.class);
+        startActivity(intent);
     }
 
     @Override
